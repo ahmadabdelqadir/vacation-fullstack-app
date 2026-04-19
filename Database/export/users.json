@@ -1,0 +1,65 @@
+[{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b691"
+	},
+	"firstName": "Ada",
+	"lastName": "Admin",
+	"email": "admin@vacations.com",
+	"passwordHash": "$2b$10$Z9VaRleolsMWTj1VetkZ7ujVLWkJC216.8cJww.696.dld2.jr8W.",
+	"role": "Admin",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.776Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.776Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b692"
+	},
+	"firstName": "Uriel",
+	"lastName": "User",
+	"email": "user1@demo.com",
+	"passwordHash": "$2b$10$8ViWX9VgjH7HYRfBKpTf7uET6MR.HKByYJsMbhglymF8TaPPX7Dj.",
+	"role": "User",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.777Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.777Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b693"
+	},
+	"firstName": "Ursula",
+	"lastName": "User",
+	"email": "user2@demo.com",
+	"passwordHash": "$2b$10$bS52kL8z7W8ZRKzmJ1PviuaovqKrMe8b7YPmzOSrkYo81wQoYFbQO",
+	"role": "User",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.777Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.777Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cc9ff31276e2fbb3b6be"
+	},
+	"firstName": "Ahmad",
+	"lastName": "Basem",
+	"email": "ahmad29032002@gmail.com",
+	"passwordHash": "$2b$10$YZz5SYPFwfs.Hu9gkR6kMODVE96dZW8z3ZpV3aiIlwOD11NHKMF1e",
+	"role": "User",
+	"createdAt": {
+		"$date": "2026-04-19T12:37:51.528Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:37:51.528Z"
+	}
+}]
+

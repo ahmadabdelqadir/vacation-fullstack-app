@@ -20,9 +20,8 @@ class VacationsController {
         this.router.delete("/api/vacations/:id/like", securityMiddleware.verifyToken, this.unlike);
     }
 
-    // Note: authUser is guaranteed by securityMiddleware.verifyToken.
-    // The non-null assertion (!) is safe because the middleware calls next()
-    // only after setting request.authUser.
+    // The verifyToken middleware always sets request.authUser before reaching
+    // these handlers, which is why the `!` below is safe.
 
     private list = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         try {

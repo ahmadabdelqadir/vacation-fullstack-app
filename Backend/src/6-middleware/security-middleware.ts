@@ -13,10 +13,8 @@ declare module "express-serve-static-core" {
 
 class SecurityMiddleware {
 
-    /**
-     * Shared helper: extract token → verify → decode → attach to request.
-     * Returns the decoded user, or calls next(err) and returns null.
-     */
+    // Pulls the JWT off the request, verifies it, and attaches the decoded
+    // user to request.authUser. Returns null (and forwards a 401) if anything fails.
     private authenticateRequest(request: Request, next: NextFunction): TokenUser | null {
         const token = cyber.extractToken(request);
         if (!cyber.verifyToken(token)) {
@@ -59,9 +57,9 @@ class SecurityMiddleware {
         next();
     };
 
-    // Fields we never touch: hashing makes XSS irrelevant, and silently
-    // stripping characters from a password would cause the user's typed
-    // string to mismatch the stored hash on the next login.
+    // Password fields are skipped. If we stripped characters from a password
+    // here, the hash stored at register time wouldn't match the typed password
+    // at login time, and the user would be locked out for no reason.
     private readonly xssSkipFields = new Set<string>(["password", "passwordHash", "currentPassword", "newPassword"]);
 
     /** Strip HTML tags from string body fields (except passwords). */

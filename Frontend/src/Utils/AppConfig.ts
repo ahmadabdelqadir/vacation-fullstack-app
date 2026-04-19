@@ -33,9 +33,8 @@ class AppConfig {
 
     public imageUrl(fileName: string): string {
         if (!fileName) return "";
-        // Strip a trailing slash from the base URL to avoid producing "//api/..."
-        // which the browser treats as protocol-relative (and tries to resolve
-        // "api" as a hostname). Happens when baseUrl is "/" in the Docker build.
+        // Drop the trailing slash from the base URL so we don't end up with
+        // "//api/..." - the browser reads that as a hostname and the request fails.
         const base = this.apiBaseUrl.replace(/\/+$/, "");
         return base + this.vacationsUrls.image(fileName);
     }

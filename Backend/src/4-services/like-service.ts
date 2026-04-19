@@ -19,9 +19,8 @@ class LikeService {
                 { upsert: true }
             );
         } catch (err) {
-            // Duplicate-key (code 11000) from the unique compound index just means
-            // the like already exists — that's the idempotent success path. Any
-            // other error is a real failure and must bubble up.
+            // Error 11000 = duplicate key. That means the like is already there,
+            // so we just ignore it. Any other error is real and should bubble up.
             const mongoErr = err as { code?: number };
             if (mongoErr.code !== 11000) throw err;
         }

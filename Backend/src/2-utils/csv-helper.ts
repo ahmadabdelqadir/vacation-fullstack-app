@@ -1,9 +1,6 @@
 class CsvHelper {
-    /**
-     * Build a UTF-8 CSV string with a BOM prefix so Excel opens it
-     * correctly, and quote any cell that contains a comma, quote, or
-     * newline.
-     */
+    // Builds a CSV string. Starts with a UTF-8 BOM so Excel opens it correctly,
+    // and quotes any cell that has a comma, quote, or newline inside it.
     public build(header: string[], rows: Array<Array<string | number>>): string {
         const lines = [this.toRow(header), ...rows.map(row => this.toRow(row))];
         return "\uFEFF" + lines.join("\r\n") + "\r\n";

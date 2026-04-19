@@ -83,10 +83,9 @@ class AdminVacationService {
                 await VacationModel.deleteOne({ _id: existing._id }).session(session);
             });
         } catch (txErr) {
-            // Standalone MongoDB (no replica set) doesn't support transactions.
-            // Log the original error, then fall back to sequential deletes.
-            // Likes are deleted first so we never leave orphan like documents.
-            console.warn("Transaction unavailable — falling back to sequential delete:", (txErr as Error).message);
+            // Transactions need a replica set. On a standalone Mongo (our Docker
+            // setup), fall back to deleting likes first, then the vacation.
+            console.warn("Transaction unavailable, doing sequential delete:", (txErr as Error).message);
             await LikeModel.deleteMany({ vacationId: existing._id });
             await VacationModel.deleteOne({ _id: existing._id });
         } finally {
@@ -137,9 +136,8 @@ class AdminVacationService {
             throw new ValidationError("Image file is too large (max 4 MB).");
         }
 
-        // uploaded-file-saver's add(file) generates a UUID filename itself
-        // and returns it. The second parameter is a containingFolder override,
-        // NOT the target filename, so do not pass our own name here.
+        // fileSaver.add(file) picks its own UUID filename and returns it.
+        // Don't pass a second arg here - that's a folder override, not a filename.
         return fileSaver.add(file);
     }
 

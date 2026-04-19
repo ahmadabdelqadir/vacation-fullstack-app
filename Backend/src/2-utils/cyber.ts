@@ -19,8 +19,8 @@ interface TokenPayload {
 
 class Cyber {
 
-    // New passwords use bcrypt. The legacy HMAC path exists only to migrate
-    // already-seeded local users without breaking logins during the upgrade.
+    // New passwords always use bcrypt. The HMAC path in verifyPassword below
+    // is only there so old accounts from earlier builds can still log in.
     public async hash(plainText: string): Promise<string> {
         return bcrypt.hash(plainText, appConfig.bcryptRounds);
     }

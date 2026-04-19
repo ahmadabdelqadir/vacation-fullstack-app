@@ -52,11 +52,9 @@ export function Paginator({ page, pageSize, total, onChange }: Props) {
     );
 }
 
-/**
- * Build a compact page list showing first, last, the current page,
- * and one neighbor on each side. Example for current=5, total=10:
- * [1, "…", 4, 5, 6, "…", 10].
- */
+// Returns a short page list with the first page, the last page, the current
+// page, and one page on each side of the current one. Example for page 5 of 10:
+// [1, "…", 4, 5, 6, "…", 10].
 function buildPageList(currentPage: number, totalPages: number): Array<number | "…"> {
     const neighborRadius = 1;
     const pageList: Array<number | "…"> = [];

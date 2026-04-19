@@ -46,14 +46,13 @@ Services:
 
 ## API and Postman
 
-Postman files:
+The Postman collection lives at:
 
 - `Backend/postman/Vacation App API.postman_collection.json`
-- `Backend/postman/Vacation App Local.postman_environment.json`
 
 Suggested flow:
 
-1. Import both files into Postman.
+1. Import the collection into Postman.
 2. Run the Login request first.
 3. Reuse the stored token for the protected requests.
 4. Paste a vacation `_id` into the `vacationId` variable when testing like, edit, and delete flows.

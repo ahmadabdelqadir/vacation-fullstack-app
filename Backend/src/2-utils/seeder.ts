@@ -21,11 +21,9 @@ function resolveSeedImagesDir(): string | null {
     return null;
 }
 
-/**
- * Idempotent seed. Runs on boot when a collection is empty. Anchored to
- * 2026-04-13 so the demo includes real past, active, and future vacations
- * for the required filters.
- */
+// Seeds the database on backend start. Only inserts data if the collection is empty,
+// so restarting the app never overwrites anything.
+// Dates are set around April 13, 2026 so the Past/Active/Upcoming filters all have results.
 class Seeder {
 
     private readonly seedImagesDir = resolveSeedImagesDir();
@@ -320,7 +318,7 @@ class Seeder {
         const pattern: Array<{ destinationCode: string; likers: number[] }> = [
             { destinationCode: "VAC-0001", likers: [0] },    // Paris
             { destinationCode: "VAC-0002", likers: [1] },    // Rome
-            // VAC-0003 (Cairo) intentionally zero to prove the chart handles zeros.
+            // VAC-0003 (Cairo) left with zero likes so the report chart shows empty bars too.
             { destinationCode: "VAC-0004", likers: [0, 1] }, // Barcelona
             { destinationCode: "VAC-0005", likers: [0, 1] }, // Tokyo - popular
             { destinationCode: "VAC-0006", likers: [0, 1] }, // Rio

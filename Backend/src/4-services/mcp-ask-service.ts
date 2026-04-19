@@ -8,15 +8,9 @@ export interface McpAskResponse {
     mode: "remote-openai" | "in-process" | "direct";
 }
 
-/**
- * Routes a natural-language vacation question into an MCP-backed tool call.
- *
- * - If OpenAI is configured AND MCP_PUBLIC_URL is set, use the remote MCP
- *   flow (matches the teaching example exactly).
- * - Otherwise fall back to a deterministic keyword router that calls the
- *   same MCP tool handlers in-process. An LLM summarizer is used when the
- *   AI key is available; otherwise we return the raw JSON.
- */
+// Takes a natural-language question and routes it to one of our MCP tools.
+// If AI_API_KEY and MCP_PUBLIC_URL are both set, OpenAI handles the routing.
+// Otherwise we match a few keywords ourselves and call the tool directly.
 class McpAskService {
 
     public async ask(question: string): Promise<McpAskResponse> {
@@ -66,7 +60,7 @@ class McpAskService {
         if (/(future|upcoming|next|coming|planned)/.test(q)) {
             return MCP_TOOL_NAMES.getFutureVacations;
         }
-        // Default: answering "what vacations do you have?" shows the upcoming list.
+        // Nothing matched - just return the upcoming list as a reasonable default.
         return MCP_TOOL_NAMES.getFutureVacations;
     }
 

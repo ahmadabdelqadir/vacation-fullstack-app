@@ -1,0 +1,415 @@
+[{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b694"
+	},
+	"vacationCode": "VAC-0001",
+	"destination": "Paris, France",
+	"description": "A week in the city of light. Historic neighborhoods, river cruises, and pastries that change your mood.",
+	"startDate": {
+		"$date": "2026-01-05T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-01-15T00:00:00Z"
+	},
+	"price": 1899,
+	"imageFileName": "vacation-01.jpg",
+	"continent": "Europe",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b695"
+	},
+	"vacationCode": "VAC-0002",
+	"destination": "Rome, Italy",
+	"description": "Ancient ruins, hand-rolled pasta, and evenings across Trastevere's cobblestones. Food, art, and centuries of stories.",
+	"startDate": {
+		"$date": "2026-02-10T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-02-23T00:00:00Z"
+	},
+	"price": 1749,
+	"imageFileName": "vacation-02.jpg",
+	"continent": "Europe",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:44:08.058Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b696"
+	},
+	"vacationCode": "VAC-0003",
+	"destination": "Cairo, Egypt",
+	"description": "Pyramids at golden hour, felucca rides on the Nile, and bustling bazaars loaded with spices and silver.",
+	"startDate": {
+		"$date": "2026-03-01T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-03-12T00:00:00Z"
+	},
+	"price": 1499,
+	"imageFileName": "vacation-03.jpg",
+	"continent": "Africa",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b697"
+	},
+	"vacationCode": "VAC-0004",
+	"destination": "Barcelona, Spain",
+	"description": "Gaudí's architecture, tapas bars that never close, and beach sunsets framed by mountains.",
+	"startDate": {
+		"$date": "2026-04-05T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-04-18T00:00:00Z"
+	},
+	"price": 1599,
+	"imageFileName": "vacation-04.jpg",
+	"continent": "Europe",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b698"
+	},
+	"vacationCode": "VAC-0005",
+	"destination": "Tokyo, Japan",
+	"description": "Sushi counters, late-night ramen, neon alleys in Shinjuku, and serene temples a train ride away.",
+	"startDate": {
+		"$date": "2026-04-10T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-04-22T00:00:00Z"
+	},
+	"price": 2399,
+	"imageFileName": "vacation-05.jpg",
+	"continent": "Asia",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b699"
+	},
+	"vacationCode": "VAC-0006",
+	"destination": "Rio de Janeiro, Brazil",
+	"description": "Cable cars up Sugarloaf, samba on the beach, and views that justify every flight hour to get there.",
+	"startDate": {
+		"$date": "2026-04-01T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-04-25T00:00:00Z"
+	},
+	"price": 2099,
+	"imageFileName": "vacation-06.jpg",
+	"continent": "SouthAmerica",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b69a"
+	},
+	"vacationCode": "VAC-0007",
+	"destination": "Lisbon, Portugal",
+	"description": "Tiled facades, tram 28, pastéis de nata, and the Atlantic glittering at the end of every street.",
+	"startDate": {
+		"$date": "2026-05-08T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-05-18T00:00:00Z"
+	},
+	"price": 1399,
+	"imageFileName": "vacation-07.jpg",
+	"continent": "Europe",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b69b"
+	},
+	"vacationCode": "VAC-0008",
+	"destination": "Reykjavik, Iceland",
+	"description": "Geothermal lagoons, northern lights if you're lucky, and the kind of raw landscapes that reset your brain.",
+	"startDate": {
+		"$date": "2026-06-14T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-06-22T00:00:00Z"
+	},
+	"price": 2299,
+	"imageFileName": "vacation-08.jpg",
+	"continent": "Europe",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b69c"
+	},
+	"vacationCode": "VAC-0009",
+	"destination": "Cape Town, South Africa",
+	"description": "Table Mountain, wine country an hour away, and some of the most beautiful coastline on earth.",
+	"startDate": {
+		"$date": "2026-07-20T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-07-31T00:00:00Z"
+	},
+	"price": 2599,
+	"imageFileName": "vacation-09.jpg",
+	"continent": "Africa",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b69d"
+	},
+	"vacationCode": "VAC-0010",
+	"destination": "Bali, Indonesia",
+	"description": "Terraced rice fields, beach clubs at sunset, and temples hidden a few turns off the main road.",
+	"startDate": {
+		"$date": "2026-08-12T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-08-24T00:00:00Z"
+	},
+	"price": 1999,
+	"imageFileName": "vacation-10.jpg",
+	"continent": "Asia",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b69e"
+	},
+	"vacationCode": "VAC-0011",
+	"destination": "New York, USA",
+	"description": "Skyline from the water, corner pizza slices, Broadway at night, and a museum for every mood.",
+	"startDate": {
+		"$date": "2026-10-05T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-10-13T00:00:00Z"
+	},
+	"price": 1899,
+	"imageFileName": "vacation-11.jpg",
+	"continent": "NorthAmerica",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b69f"
+	},
+	"vacationCode": "VAC-0012",
+	"destination": "Santorini, Greece",
+	"description": "Whitewashed villages, caldera views that genuinely live up to the photos, and Aegean sunsets.",
+	"startDate": {
+		"$date": "2026-11-10T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-11-18T00:00:00Z"
+	},
+	"price": 1799,
+	"imageFileName": "vacation-12.jpg",
+	"continent": "Europe",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b6a0"
+	},
+	"vacationCode": "VAC-0013",
+	"destination": "Banff, Canada",
+	"description": "Turquoise lakes framed by jagged peaks, elk on the roadside, and silent hikes through spruce forests.",
+	"startDate": {
+		"$date": "2025-12-10T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2025-12-20T00:00:00Z"
+	},
+	"price": 2199,
+	"imageFileName": "vacation-18.jpg",
+	"continent": "NorthAmerica",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b6a1"
+	},
+	"vacationCode": "VAC-0014",
+	"destination": "Maldives",
+	"description": "Overwater villas, bioluminescent beaches, and reefs you can snorkel straight from your door.",
+	"startDate": {
+		"$date": "2026-04-08T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-04-20T00:00:00Z"
+	},
+	"price": 3499,
+	"imageFileName": "vacation-17.jpg",
+	"continent": "Asia",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b6a2"
+	},
+	"vacationCode": "VAC-0015",
+	"destination": "Dubrovnik, Croatia",
+	"description": "Stone-walled Old Town, Adriatic swims off the ramparts, and sunsets over terracotta rooftops.",
+	"startDate": {
+		"$date": "2026-06-05T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-06-14T00:00:00Z"
+	},
+	"price": 1599,
+	"imageFileName": "vacation-16.jpg",
+	"continent": "Europe",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b6a3"
+	},
+	"vacationCode": "VAC-0016",
+	"destination": "Marrakech, Morocco",
+	"description": "Souks that swallow whole afternoons, riad courtyards, tagines, and tea poured from impossible heights.",
+	"startDate": {
+		"$date": "2026-07-04T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-07-12T00:00:00Z"
+	},
+	"price": 1299,
+	"imageFileName": "vacation-14.jpg",
+	"continent": "Africa",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b6a4"
+	},
+	"vacationCode": "VAC-0017",
+	"destination": "Sydney, Australia",
+	"description": "Harbour ferries, coastal walks from Bondi to Coogee, and the Opera House lit up after dark.",
+	"startDate": {
+		"$date": "2026-09-15T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2026-09-25T00:00:00Z"
+	},
+	"price": 2899,
+	"imageFileName": "vacation-13.jpg",
+	"continent": "Oceania",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "69e4cb0df31276e2fbb3b6a5"
+	},
+	"vacationCode": "VAC-0018",
+	"destination": "Kyoto, Japan",
+	"description": "Thousands of vermilion torii gates, tea ceremonies in old wooden houses, and cherry blossoms everywhere in spring.",
+	"startDate": {
+		"$date": "2027-03-22T00:00:00Z"
+	},
+	"endDate": {
+		"$date": "2027-03-30T00:00:00Z"
+	},
+	"price": 2599,
+	"imageFileName": "vacation-15.jpg",
+	"continent": "Asia",
+	"createdAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	},
+	"updatedAt": {
+		"$date": "2026-04-19T12:31:09.8Z"
+	}
+}]
+

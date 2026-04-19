@@ -3,10 +3,8 @@ import { Document, model, Schema } from "mongoose";
 import { ValidationError } from "./client-errors";
 import { Continent } from "./enums";
 
-/**
- * Input DTO used by admin create/update endpoints.
- * The image is a multipart upload handled separately in the controller.
- */
+// Shape of the form body when an admin adds or edits a vacation.
+// The uploaded image itself is handled by express-fileupload, not by this class.
 export class VacationInputModel {
     public vacationCode?: string;
     public destination!: string;

@@ -35,10 +35,8 @@ class AiService {
         return response.choices[0]?.message?.content?.trim() ?? "";
     }
 
-    /**
-     * Primary MCP path: let OpenAI drive our MCP server directly.
-     * Requires a publicly reachable MCP URL (tunnel / deployed backend).
-     */
+    // Asks OpenAI a question while giving it access to our MCP server.
+    // Only used when MCP_PUBLIC_URL is set; otherwise the in-process router handles it.
     public async answerViaRemoteMcp(question: string, mcpUrl: string): Promise<string> {
         if (!this.isConfigured) {
             throw new ValidationError("AI provider is not configured on the server.");
@@ -46,8 +44,7 @@ class AiService {
         const client = this.getClient();
         const safeQuestion = striptags(question).trim().slice(0, 400);
 
-        // OpenAI's MCP tool type isn't exposed in the SDK's public typings yet,
-        // so we shape the tool object manually. The fields match the REST payload.
+        // The SDK typings don't include the "mcp" tool shape yet, so we build it by hand.
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const mcpTool: any = {
             type: "mcp",

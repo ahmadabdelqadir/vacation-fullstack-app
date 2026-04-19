@@ -5,7 +5,7 @@ interface Props {
     children: ReactNode;
 }
 
-/** Fade + slight upward slide when a route's element mounts. */
+// Adds a small fade and upward slide animation when a route mounts.
 export function PageTransition({ children }: Props) {
     return (
         <motion.div

@@ -1,9 +1,7 @@
 import { cn } from "@/lib/utils";
 
-/**
- * Decorative dot-grid background rendered via a CSS radial-gradient.
- * Fixed to the viewport, non-interactive, behind everything else.
- */
+// Background dot pattern. Drawn with a plain CSS radial gradient,
+// fixed to the viewport, and sits behind the rest of the page.
 interface Props {
     className?: string;
 }

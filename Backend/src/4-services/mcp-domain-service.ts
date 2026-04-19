@@ -7,11 +7,8 @@ export interface DestinationLikes {
     likes: number;
 }
 
-/**
- * Vacation-domain helpers used by both the MCP tools and the admin
- * reports endpoint. Centralizing these queries keeps the MCP tool
- * handlers thin and ensures REST + MCP return identical numbers.
- */
+// Shared database queries used by both the MCP tools and the admin reports page.
+// Keeping them here means the REST report and the MCP answer can never disagree.
 class McpDomainService {
 
     public async countActiveVacations(): Promise<{ count: number }> {

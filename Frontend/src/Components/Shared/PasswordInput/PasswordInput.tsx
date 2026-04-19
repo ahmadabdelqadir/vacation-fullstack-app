@@ -5,11 +5,8 @@ import { cn } from "@/lib/utils";
 
 type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "type">;
 
-/**
- * Password input with an inline eye-icon toggle that flips between
- * masked and visible text. Forwards the ref so it works directly
- * with `react-hook-form`'s `register(...)` spread.
- */
+// Password field with a small eye button that toggles between hiding
+// and showing the text. Forwards the ref so react-hook-form's register() works.
 export const PasswordInput = forwardRef<HTMLInputElement, Props>(
     function PasswordInput({ className, ...rest }, ref) {
         const [isVisible, setIsVisible] = useState(false);

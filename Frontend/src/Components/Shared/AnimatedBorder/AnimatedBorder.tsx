@@ -1,10 +1,8 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
-/**
- * Wraps its children with a rotating conic-gradient ring. The inner
- * surface sits above the ring so only a thin glow border shows.
- */
+// Shows a rotating gradient ring around its children.
+// Used to frame the login and register cards.
 interface Props {
     children: ReactNode;
     className?: string;

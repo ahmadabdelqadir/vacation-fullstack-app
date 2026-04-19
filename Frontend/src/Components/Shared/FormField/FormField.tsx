@@ -7,11 +7,8 @@ type Props = InputHTMLAttributes<HTMLInputElement> & {
     help?: ReactNode;
 };
 
-/**
- * Reusable labelled input. Uses React's useId so each instance gets a
- * guaranteed-unique DOM id — fixes the duplicated-id issue flagged in
- * the previous project review.
- */
+// Labelled input component. Uses React's useId so the label's htmlFor
+// always points at a unique id, even when several FormFields share the page.
 export const FormField = forwardRef<HTMLInputElement, Props>(function FormField(
     { label, error, help, id, ...rest },
     ref

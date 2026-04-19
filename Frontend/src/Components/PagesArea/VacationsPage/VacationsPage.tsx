@@ -47,8 +47,8 @@ export function VacationsPage() {
         load();
     }, [load]);
 
-    // Sync page + filter into URL. Only depends on page/filter to avoid
-    // re-render loops caused by searchParams reference changing.
+    // Keep the ?page=X&filter=Y query string in sync with our state
+    // so refreshing the page or sharing a link stays on the same view.
     useEffect(() => {
         const params = new URLSearchParams();
         params.set("page", String(page));

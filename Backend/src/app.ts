@@ -34,9 +34,8 @@ class App {
 
             this.server = express();
 
-            // Trust the first proxy hop (nginx in the Docker stack). This makes
-            // req.ip reflect the real client IP and lets express-rate-limit key
-            // its bucket by client rather than by the proxy address.
+            // We run behind nginx in Docker, so tell Express to trust one proxy hop.
+            // Without this, express-rate-limit rejects the X-Forwarded-For header.
             this.server.set("trust proxy", 1);
 
             this.server.use(expressRateLimit({
@@ -60,10 +59,8 @@ class App {
 
             this.server.use(securityMiddleware.preventXss);
 
-            // MCP server: /sse for tool discovery, /messages for tool calls.
-            // `express-mcp-handler` expects the low-level `Server` type from an older
-            // SDK version. Our `McpServer` is API-compatible at runtime, so we cast
-            // at the factory boundary only.
+            // MCP server: /sse lists the tools, /messages runs them.
+            // The cast is a type-only workaround for a version mismatch in the SDK.
             const mcpServer = vacationsMcpServer.createMcpServer();
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const mcpServerFactory = () => mcpServer as any;
