@@ -1,241 +1,554 @@
 {
-    "info": {
-        "name": "Vacation App API",
-        "_postman_id": "c2a9d4e1-48f2-42df-9aaa-vacapp000001",
-        "description": "End-to-end collection for the Vacation FullStack App backend. Register or log in first - the collection automatically stores the returned token in the collection variable `token`, and every protected request reads it.",
-        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-    },
-    "variable": [
-        { "key": "baseUrl", "value": "http://localhost:4000" },
-        { "key": "token", "value": "" },
-        { "key": "vacationId", "value": "" }
-    ],
-    "item": [
+  "info": {
+    "_postman_id": "323c7f53-b3a4-4223-b460-b950441addc9",
+    "name": "Vacation App API",
+    "description": "Postman collection for the Vacation FullStack App backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51857188",
+    "_collection_link": "https://go.postman.co/collection/51857188-323c7f53-b3a4-4223-b460-b950441addc9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
         {
-            "name": "Auth",
-            "item": [
-                {
-                    "name": "Register",
-                    "request": {
-                        "method": "POST",
-                        "header": [{ "key": "Content-Type", "value": "application/json" }],
-                        "url": { "raw": "{{baseUrl}}/api/auth/register", "host": ["{{baseUrl}}"], "path": ["api", "auth", "register"] },
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"firstName\": \"Demo\",\n    \"lastName\": \"User\",\n    \"email\": \"demo@example.com\",\n    \"password\": \"demo1234\"\n}"
-                        }
-                    },
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "type": "text/javascript",
-                                "exec": [
-                                    "const body = pm.response.json();",
-                                    "if (body && body.token) {",
-                                    "    pm.collectionVariables.set('token', body.token);",
-                                    "}"
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Login",
-                    "request": {
-                        "method": "POST",
-                        "header": [{ "key": "Content-Type", "value": "application/json" }],
-                        "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "auth", "login"] },
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"email\": \"admin@vacations.com\",\n    \"password\": \"admin1234\"\n}"
-                        }
-                    },
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "type": "text/javascript",
-                                "exec": [
-                                    "const body = pm.response.json();",
-                                    "if (body && body.token) {",
-                                    "    pm.collectionVariables.set('token', body.token);",
-                                    "}"
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Me",
-                    "request": {
-                        "method": "GET",
-                        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                        "url": { "raw": "{{baseUrl}}/api/auth/me", "host": ["{{baseUrl}}"], "path": ["api", "auth", "me"] }
-                    }
-                }
-            ]
+          "name": "Register",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const body = pm.response.json();",
+                  "if (body && body.token) {",
+                  "    pm.collectionVariables.set('token', body.token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\": \"Demo\",\n    \"lastName\": \"User\",\n    \"email\": \"demo@example.com\",\n    \"password\": \"demo1234\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
         },
         {
-            "name": "Vacations",
-            "item": [
-                {
-                    "name": "List (paginated)",
-                    "request": {
-                        "method": "GET",
-                        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/vacations?page=1&limit=9&filter=all",
-                            "host": ["{{baseUrl}}"],
-                            "path": ["api", "vacations"],
-                            "query": [
-                                { "key": "page", "value": "1" },
-                                { "key": "limit", "value": "9" },
-                                { "key": "filter", "value": "all" }
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "One",
-                    "request": {
-                        "method": "GET",
-                        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                        "url": { "raw": "{{baseUrl}}/api/vacations/{{vacationId}}", "host": ["{{baseUrl}}"], "path": ["api", "vacations", "{{vacationId}}"] }
-                    }
-                },
-                {
-                    "name": "Like",
-                    "request": {
-                        "method": "POST",
-                        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                        "url": { "raw": "{{baseUrl}}/api/vacations/{{vacationId}}/like", "host": ["{{baseUrl}}"], "path": ["api", "vacations", "{{vacationId}}", "like"] }
-                    }
-                },
-                {
-                    "name": "Unlike",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                        "url": { "raw": "{{baseUrl}}/api/vacations/{{vacationId}}/like", "host": ["{{baseUrl}}"], "path": ["api", "vacations", "{{vacationId}}", "like"] }
-                    }
-                },
-                {
-                    "name": "Image (public)",
-                    "request": {
-                        "method": "GET",
-                        "url": { "raw": "{{baseUrl}}/api/vacations/images/vacation-01.jpg", "host": ["{{baseUrl}}"], "path": ["api", "vacations", "images", "vacation-01.jpg"] }
-                    }
-                }
-            ]
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const body = pm.response.json();",
+                  "if (body && body.token) {",
+                  "    pm.collectionVariables.set('token', body.token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"admin@vacations.com\",\n    \"password\": \"admin1234\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
         },
         {
-            "name": "Admin - Vacations",
-            "item": [
-                {
-                    "name": "Create (multipart)",
-                    "request": {
-                        "method": "POST",
-                        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                        "url": { "raw": "{{baseUrl}}/api/admin/vacations", "host": ["{{baseUrl}}"], "path": ["api", "admin", "vacations"] },
-                        "body": {
-                            "mode": "formdata",
-                            "formdata": [
-                                { "key": "destination", "value": "Prague, Czechia", "type": "text" },
-                                { "key": "description", "value": "Castle hills, trdelnik, and the moldovan bend of the river at dusk.", "type": "text" },
-                                { "key": "continent", "value": "Europe", "type": "text" },
-                                { "key": "startDate", "value": "2027-02-01", "type": "text" },
-                                { "key": "endDate", "value": "2027-02-08", "type": "text" },
-                                { "key": "price", "value": "1299", "type": "text" },
-                                { "key": "image", "type": "file", "src": [] }
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "Update (multipart)",
-                    "request": {
-                        "method": "PUT",
-                        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                        "url": { "raw": "{{baseUrl}}/api/admin/vacations/{{vacationId}}", "host": ["{{baseUrl}}"], "path": ["api", "admin", "vacations", "{{vacationId}}"] },
-                        "body": {
-                            "mode": "formdata",
-                            "formdata": [
-                                { "key": "destination", "value": "Prague, Czechia", "type": "text" },
-                                { "key": "description", "value": "Updated description.", "type": "text" },
-                                { "key": "continent", "value": "Europe", "type": "text" },
-                                { "key": "startDate", "value": "2027-02-01", "type": "text" },
-                                { "key": "endDate", "value": "2027-02-08", "type": "text" },
-                                { "key": "price", "value": "1199", "type": "text" }
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "Delete",
-                    "request": {
-                        "method": "DELETE",
-                        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                        "url": { "raw": "{{baseUrl}}/api/admin/vacations/{{vacationId}}", "host": ["{{baseUrl}}"], "path": ["api", "admin", "vacations", "{{vacationId}}"] }
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Admin - Reports",
-            "item": [
-                {
-                    "name": "Likes by destination (JSON)",
-                    "request": {
-                        "method": "GET",
-                        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                        "url": { "raw": "{{baseUrl}}/api/admin/reports/vacations-likes", "host": ["{{baseUrl}}"], "path": ["api", "admin", "reports", "vacations-likes"] }
-                    }
-                },
-                {
-                    "name": "Likes by destination (CSV)",
-                    "request": {
-                        "method": "GET",
-                        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                        "url": { "raw": "{{baseUrl}}/api/admin/reports/vacations-likes/csv", "host": ["{{baseUrl}}"], "path": ["api", "admin", "reports", "vacations-likes", "csv"] }
-                    }
-                }
-            ]
-        },
-        {
-            "name": "AI & MCP",
-            "item": [
-                {
-                    "name": "AI recommendation",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            { "key": "Authorization", "value": "Bearer {{token}}" },
-                            { "key": "Content-Type", "value": "application/json" }
-                        ],
-                        "url": { "raw": "{{baseUrl}}/api/ai/recommendation", "host": ["{{baseUrl}}"], "path": ["api", "ai", "recommendation"] },
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"destination\": \"Tokyo\"\n}"
-                        }
-                    }
-                },
-                {
-                    "name": "MCP ask",
-                    "request": {
-                        "method": "POST",
-                        "header": [
-                            { "key": "Authorization", "value": "Bearer {{token}}" },
-                            { "key": "Content-Type", "value": "application/json" }
-                        ],
-                        "url": { "raw": "{{baseUrl}}/api/mcp/ask", "host": ["{{baseUrl}}"], "path": ["api", "mcp", "ask"] },
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"question\": \"How many active holidays are there currently?\"\n}"
-                        }
-                    }
-                }
-            ]
+          "name": "Me",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
         }
-    ]
+      ]
+    },
+    {
+      "name": "Vacations",
+      "item": [
+        {
+          "name": "List (paginated)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/vacations?page=1&limit=9&filter=all",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "vacations"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "9"
+                },
+                {
+                  "key": "filter",
+                  "value": "all"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "One",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/vacations/{{vacationId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "vacations",
+                "{{vacationId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Like",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/vacations/{{vacationId}}/like",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "vacations",
+                "{{vacationId}}",
+                "like"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unlike",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/vacations/{{vacationId}}/like",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "vacations",
+                "{{vacationId}}",
+                "like"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Image (public)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/vacations/images/vacation-01.jpg",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "vacations",
+                "images",
+                "vacation-01.jpg"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admin - Vacations",
+      "item": [
+        {
+          "name": "Create (multipart)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "destination",
+                  "value": "Prague, Czechia",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Castle hills, trdelnik, and the moldovan bend of the river at dusk.",
+                  "type": "text"
+                },
+                {
+                  "key": "continent",
+                  "value": "Europe",
+                  "type": "text"
+                },
+                {
+                  "key": "startDate",
+                  "value": "2027-02-01",
+                  "type": "text"
+                },
+                {
+                  "key": "endDate",
+                  "value": "2027-02-08",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "1299",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "value": null
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/vacations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "vacations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update (multipart)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "destination",
+                  "value": "Prague, Czechia",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Updated description.",
+                  "type": "text"
+                },
+                {
+                  "key": "continent",
+                  "value": "Europe",
+                  "type": "text"
+                },
+                {
+                  "key": "startDate",
+                  "value": "2027-02-01",
+                  "type": "text"
+                },
+                {
+                  "key": "endDate",
+                  "value": "2027-02-08",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "1199",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/vacations/{{vacationId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "vacations",
+                "{{vacationId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/vacations/{{vacationId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "vacations",
+                "{{vacationId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admin - Reports",
+      "item": [
+        {
+          "name": "Likes by destination (JSON)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/reports/vacations-likes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "reports",
+                "vacations-likes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Likes by destination (CSV)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/reports/vacations-likes/csv",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "reports",
+                "vacations-likes",
+                "csv"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "AI & MCP",
+      "item": [
+        {
+          "name": "AI recommendation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"destination\": \"Tokyo\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/ai/recommendation",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "ai",
+                "recommendation"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "MCP ask",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"question\": \"How many active holidays are there currently?\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/mcp/ask",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "mcp",
+                "ask"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "vacationId",
+      "value": ""
+    }
+  ]
 }
