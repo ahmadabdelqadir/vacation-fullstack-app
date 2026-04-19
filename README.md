@@ -41,9 +41,10 @@ STAGE-01..08*.md  Progress log for each implementation phase.
 cd Backend && npm install
 cd ../Frontend && npm install
 
-# 2) Create env files
-cp Backend/.env.example Backend/.env
-cp Frontend/.env.example Frontend/.env
+# 2) Create env files (see the env-var tables below for required values)
+#    - Backend/.env       -> ENVIRONMENT, PORT, MONGODB_CONNECTION_STRING, JWT_SECRET,
+#                            BCRYPT_ROUNDS, AI_API_KEY, AI_MODEL, RUN_SEED
+#    - Frontend/.env      -> VITE_API_BASE_URL
 
 # 3) Start MongoDB locally
 #    or run: docker compose up -d mongo
