@@ -7,17 +7,17 @@ import helmet from "helmet";
 import mongoose from "mongoose";
 import path from "path";
 import { fileSaver } from "uploaded-file-saver";
-import { appConfig } from "./2-utils/app-config";
-import { seeder } from "./2-utils/seeder";
-import { vacationsMcpServer } from "./4-services/mcp-server";
-import { adminVacationsController } from "./5-controllers/admin-vacations-controller";
-import { aiController } from "./5-controllers/ai-controller";
-import { authController } from "./5-controllers/auth-controller";
-import { mcpAskController } from "./5-controllers/mcp-ask-controller";
-import { reportsController } from "./5-controllers/reports-controller";
-import { vacationsController } from "./5-controllers/vacations-controller";
-import { errorsMiddleware } from "./6-middleware/errors-middleware";
-import { securityMiddleware } from "./6-middleware/security-middleware";
+import { appConfig } from "./utils/app-config";
+import { seeder } from "./utils/seeder";
+import { vacationsMcpServer } from "./services/mcp-server";
+import { adminVacationsController } from "./controllers/admin-vacations-controller";
+import { aiController } from "./controllers/ai-controller";
+import { authController } from "./controllers/auth-controller";
+import { mcpAskController } from "./controllers/mcp-ask-controller";
+import { reportsController } from "./controllers/reports-controller";
+import { vacationsController } from "./controllers/vacations-controller";
+import { errorsMiddleware } from "./middleware/errors-middleware";
+import { securityMiddleware } from "./middleware/security-middleware";
 
 class App {
 
@@ -54,7 +54,7 @@ class App {
             }));
             this.server.use(expressFileUpload());
 
-            const imageLocation = path.join(__dirname, "1-assets", "images");
+            const imageLocation = path.join(__dirname, "assets", "images");
             fileSaver.config(imageLocation);
 
             this.server.use(securityMiddleware.preventXss);

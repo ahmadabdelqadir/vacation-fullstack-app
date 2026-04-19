@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response, Router } from "express";
-import { McpQuestionRequest } from "../3-models/ai-question-model";
-import { mcpAskService } from "../4-services/mcp-ask-service";
-import { securityMiddleware } from "../6-middleware/security-middleware";
+import { McpQuestionRequest } from "../models/ai-question-model";
+import { mcpAskService } from "../services/mcp-ask-service";
+import { securityMiddleware } from "../middleware/security-middleware";
 
 class McpAskController {
 

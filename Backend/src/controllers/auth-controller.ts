@@ -1,9 +1,9 @@
 import express, { NextFunction, Request, Response, Router } from "express";
-import { authService } from "../4-services/auth-service";
-import { UnauthorizedError } from "../3-models/client-errors";
-import { StatusCode } from "../3-models/enums";
-import { CredentialsModel, RegisterModel } from "../3-models/user-model";
-import { securityMiddleware } from "../6-middleware/security-middleware";
+import { authService } from "../services/auth-service";
+import { UnauthorizedError } from "../models/client-errors";
+import { StatusCode } from "../models/enums";
+import { CredentialsModel, RegisterModel } from "../models/user-model";
+import { securityMiddleware } from "../middleware/security-middleware";
 
 class AuthController {
 

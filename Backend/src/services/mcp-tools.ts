@@ -1,5 +1,5 @@
 import { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
-import { mcpHelper } from "../2-utils/mcp-helper";
+import { mcpHelper } from "../utils/mcp-helper";
 import { mcpDomainService } from "./mcp-domain-service";
 
 export const MCP_TOOL_NAMES = {

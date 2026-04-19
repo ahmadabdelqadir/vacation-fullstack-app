@@ -1,4 +1,4 @@
-import { csvHelper } from "../2-utils/csv-helper";
+import { csvHelper } from "../utils/csv-helper";
 import { mcpDomainService, DestinationLikes } from "./mcp-domain-service";
 
 class ReportService {

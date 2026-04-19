@@ -1,8 +1,8 @@
 import { PipelineStage, Types } from "mongoose";
-import { VacationFilter } from "../3-models/enums";
-import { IVacationDocument, VacationModel } from "../3-models/vacation-model";
-import { LikeModel } from "../3-models/like-model";
-import { ResourceNotFoundError, ValidationError } from "../3-models/client-errors";
+import { VacationFilter } from "../models/enums";
+import { IVacationDocument, VacationModel } from "../models/vacation-model";
+import { LikeModel } from "../models/like-model";
+import { ResourceNotFoundError, ValidationError } from "../models/client-errors";
 
 type DateFilter = {
     startDate?: { $lte?: Date; $gt?: Date };

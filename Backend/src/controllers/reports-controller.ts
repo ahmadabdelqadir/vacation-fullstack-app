@@ -1,6 +1,6 @@
 import express, { NextFunction, Request, Response, Router } from "express";
-import { reportService } from "../4-services/report-service";
-import { securityMiddleware } from "../6-middleware/security-middleware";
+import { reportService } from "../services/report-service";
+import { securityMiddleware } from "../middleware/security-middleware";
 
 class ReportsController {
 

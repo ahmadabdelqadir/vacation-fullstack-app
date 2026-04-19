@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import striptags from "striptags";
-import { appConfig } from "../2-utils/app-config";
-import { ValidationError } from "../3-models/client-errors";
+import { appConfig } from "../utils/app-config";
+import { ValidationError } from "../models/client-errors";
 
 class AiService {
 

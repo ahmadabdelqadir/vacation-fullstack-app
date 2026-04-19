@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 import jwt, { SignOptions } from "jsonwebtoken";
 import { Request } from "express";
 import { appConfig } from "./app-config";
-import { Role } from "../3-models/enums";
+import { Role } from "../models/enums";
 
 export interface TokenUser {
     _id: string;

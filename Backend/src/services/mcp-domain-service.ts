@@ -1,6 +1,6 @@
-import { Continent } from "../3-models/enums";
-import { LikeModel } from "../3-models/like-model";
-import { VacationModel } from "../3-models/vacation-model";
+import { Continent } from "../models/enums";
+import { LikeModel } from "../models/like-model";
+import { VacationModel } from "../models/vacation-model";
 
 export interface DestinationLikes {
     destination: string;

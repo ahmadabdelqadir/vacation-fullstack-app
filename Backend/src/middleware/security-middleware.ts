@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 import striptags from "striptags";
-import { cyber, TokenUser } from "../2-utils/cyber";
-import { ForbiddenError, UnauthorizedError } from "../3-models/client-errors";
-import { Role } from "../3-models/enums";
+import { cyber, TokenUser } from "../utils/cyber";
+import { ForbiddenError, UnauthorizedError } from "../models/client-errors";
+import { Role } from "../models/enums";
 
 // Attach the decoded user onto the request for downstream handlers.
 declare module "express-serve-static-core" {

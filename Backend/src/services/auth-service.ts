@@ -1,7 +1,7 @@
-import { cyber, TokenUser } from "../2-utils/cyber";
-import { ConflictError, UnauthorizedError } from "../3-models/client-errors";
-import { Role } from "../3-models/enums";
-import { CredentialsModel, IUserDocument, RegisterModel, UserModel } from "../3-models/user-model";
+import { cyber, TokenUser } from "../utils/cyber";
+import { ConflictError, UnauthorizedError } from "../models/client-errors";
+import { Role } from "../models/enums";
+import { CredentialsModel, IUserDocument, RegisterModel, UserModel } from "../models/user-model";
 
 export interface AuthResponse {
     token: string;

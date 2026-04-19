@@ -2,9 +2,9 @@ import fs from "fs";
 import mongoose, { Types } from "mongoose";
 import { UploadedFile } from "express-fileupload";
 import { fileSaver } from "uploaded-file-saver";
-import { ConflictError, ResourceNotFoundError, UnsupportedMediaError, ValidationError } from "../3-models/client-errors";
-import { LikeModel } from "../3-models/like-model";
-import { IVacationDocument, VacationInputModel, VacationModel } from "../3-models/vacation-model";
+import { ConflictError, ResourceNotFoundError, UnsupportedMediaError, ValidationError } from "../models/client-errors";
+import { LikeModel } from "../models/like-model";
+import { IVacationDocument, VacationInputModel, VacationModel } from "../models/vacation-model";
 
 const ALLOWED_MIME = ["image/jpeg", "image/png", "image/webp"];
 const MAX_IMAGE_BYTES = 4 * 1024 * 1024;

@@ -1,4 +1,4 @@
-import { appConfig } from "../2-utils/app-config";
+import { appConfig } from "../utils/app-config";
 import { aiService } from "./ai-service";
 import { McpToolName, MCP_TOOL_NAMES, mcpTools } from "./mcp-tools";
 

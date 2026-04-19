@@ -17,10 +17,10 @@ RUN npm ci --omit=dev
 COPY --from=build /app/dist ./dist
 
 # Bundle seed images at a fallback path the seeder knows how to resolve.
-COPY Database/seed/images ./dist/1-assets/seed-images
+COPY Database/seed/images ./dist/assets/seed-images
 
 # Runtime image folder (mounted as a volume in docker-compose).
-RUN mkdir -p /app/dist/1-assets/images
+RUN mkdir -p /app/dist/assets/images
 
 EXPOSE 4000
 CMD ["node", "dist/app.js"]

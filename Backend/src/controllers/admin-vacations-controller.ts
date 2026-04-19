@@ -1,9 +1,9 @@
 import express, { NextFunction, Request, Response, Router } from "express";
 import { UploadedFile } from "express-fileupload";
-import { StatusCode } from "../3-models/enums";
-import { VacationInputModel } from "../3-models/vacation-model";
-import { adminVacationService } from "../4-services/admin-vacation-service";
-import { securityMiddleware } from "../6-middleware/security-middleware";
+import { StatusCode } from "../models/enums";
+import { VacationInputModel } from "../models/vacation-model";
+import { adminVacationService } from "../services/admin-vacation-service";
+import { securityMiddleware } from "../middleware/security-middleware";
 
 class AdminVacationsController {
 

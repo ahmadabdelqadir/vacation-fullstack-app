@@ -1,8 +1,8 @@
 # Vacations - Full-Stack App
 
-A full-stack TypeScript vacations platform with role-based access, vacation likes,
-admin CRUD, reports, AI recommendations, and a backend MCP (Model Context Protocol)
-server for natural-language questions about the database.
+A full stack TypeScript vacations platform with role-based access, vacation likes,
+admin management, reports, AI recommendations, and a backend MCP question page.
+server for natural language questions about the database.
 
 ## Repository
 
@@ -19,7 +19,6 @@ https://github.com/ahmadabdelqadir/vacation-fullstack-app
 
 ## Features
 
-- Role-aware menu and route protection
 - Browse vacations with pagination, filters, and like/unlike
 - Admin vacation management (add, edit, delete)
 - Admin chart report and CSV export
@@ -59,8 +58,4 @@ Suggested flow:
 
 ## MCP question page
 
-The backend uses a deterministic in-process router that invokes the same MCP tool handlers directly.
-
-## Notes
-
-- Keep `AI_API_KEY` empty if you want to run the project without AI provider access.
+The backend uses a deterministic in process router that invokes the same MCP tool handlers directly.

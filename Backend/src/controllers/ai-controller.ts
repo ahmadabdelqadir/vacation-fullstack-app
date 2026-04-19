@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response, Router } from "express";
-import { AiRecommendationRequest } from "../3-models/ai-question-model";
-import { aiService } from "../4-services/ai-service";
-import { securityMiddleware } from "../6-middleware/security-middleware";
+import { AiRecommendationRequest } from "../models/ai-question-model";
+import { aiService } from "../services/ai-service";
+import { securityMiddleware } from "../middleware/security-middleware";
 
 class AiController {
 

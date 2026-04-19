@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
-import { appConfig } from "../2-utils/app-config";
-import { RouteNotFoundError } from "../3-models/client-errors";
-import { StatusCode } from "../3-models/enums";
+import { appConfig } from "../utils/app-config";
+import { RouteNotFoundError } from "../models/client-errors";
+import { StatusCode } from "../models/enums";
 
 class ErrorsMiddleware {
 

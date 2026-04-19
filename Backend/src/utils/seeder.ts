@@ -1,19 +1,19 @@
 import fs from "fs";
 import path from "path";
 import { Types } from "mongoose";
-import { Continent, Role } from "../3-models/enums";
-import { LikeModel } from "../3-models/like-model";
-import { UserModel } from "../3-models/user-model";
-import { VacationModel } from "../3-models/vacation-model";
+import { Continent, Role } from "../models/enums";
+import { LikeModel } from "../models/like-model";
+import { UserModel } from "../models/user-model";
+import { VacationModel } from "../models/vacation-model";
 import { cyber } from "./cyber";
 
 function resolveSeedImagesDir(): string | null {
     // Candidate paths, in order of preference:
-    // 1) Monorepo-local dev: Backend/src/2-utils -> ../../../Database/seed/images
+    // 1) Monorepo-local dev: Backend/src/utils -> ../../../Database/seed/images
     // 2) Packaged Docker image: seed images copied next to runtime assets.
     const candidates = [
         path.resolve(__dirname, "..", "..", "..", "Database", "seed", "images"),
-        path.resolve(__dirname, "..", "1-assets", "seed-images")
+        path.resolve(__dirname, "..", "assets", "seed-images")
     ];
     for (const candidate of candidates) {
         if (fs.existsSync(candidate)) return candidate;
@@ -27,7 +27,7 @@ function resolveSeedImagesDir(): string | null {
 class Seeder {
 
     private readonly seedImagesDir = resolveSeedImagesDir();
-    private readonly runtimeImagesDir = path.resolve(__dirname, "..", "1-assets", "images");
+    private readonly runtimeImagesDir = path.resolve(__dirname, "..", "assets", "images");
 
     public async run(): Promise<void> {
         await this.ensureImagesOnDisk();

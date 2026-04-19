@@ -3,5 +3,5 @@ dist/
 .env
 *.log
 *.tsbuildinfo
-src/1-assets/images/*
-!src/1-assets/images/.gitkeep
+src/assets/images/*
+!src/assets/images/.gitkeep

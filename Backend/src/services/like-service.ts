@@ -1,9 +1,9 @@
 import { Types } from "mongoose";
-import { LikeModel } from "../3-models/like-model";
-import { VacationModel } from "../3-models/vacation-model";
-import { ForbiddenError, ResourceNotFoundError } from "../3-models/client-errors";
-import { Role } from "../3-models/enums";
-import { TokenUser } from "../2-utils/cyber";
+import { LikeModel } from "../models/like-model";
+import { VacationModel } from "../models/vacation-model";
+import { ForbiddenError, ResourceNotFoundError } from "../models/client-errors";
+import { Role } from "../models/enums";
+import { TokenUser } from "../utils/cyber";
 
 class LikeService {
 

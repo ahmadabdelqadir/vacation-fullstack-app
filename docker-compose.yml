@@ -31,7 +31,7 @@ services:
         ports:
             - "4000:4000"
         volumes:
-            - backend-images:/app/dist/1-assets/images
+            - backend-images:/app/dist/assets/images
 
     frontend:
         build:

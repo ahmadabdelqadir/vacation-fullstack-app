@@ -1,11 +1,11 @@
 import express, { NextFunction, Request, Response, Router } from "express";
 import fs from "fs";
 import { fileSaver } from "uploaded-file-saver";
-import { appConfig } from "../2-utils/app-config";
-import { VacationFilter } from "../3-models/enums";
-import { vacationService } from "../4-services/vacation-service";
-import { likeService } from "../4-services/like-service";
-import { securityMiddleware } from "../6-middleware/security-middleware";
+import { appConfig } from "../utils/app-config";
+import { VacationFilter } from "../models/enums";
+import { vacationService } from "../services/vacation-service";
+import { likeService } from "../services/like-service";
+import { securityMiddleware } from "../middleware/security-middleware";
 
 class VacationsController {
 
