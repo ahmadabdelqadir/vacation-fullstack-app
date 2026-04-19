@@ -1,0 +1,32 @@
+.Spinner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-muted);
+    padding: 0.5rem 0;
+}
+
+.Spinner-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    animation: spinner-bounce 0.9s infinite ease-in-out;
+}
+
+.Spinner-dot:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.Spinner-dot:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.Spinner-text {
+    margin-left: 0.35rem;
+}
+
+@keyframes spinner-bounce {
+    0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+    40% { transform: scale(1); opacity: 1; }
+}

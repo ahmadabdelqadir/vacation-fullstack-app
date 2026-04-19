@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* shadcn tokens (HSL) - travel palette */
+        --background: 210 33% 98%;
+        --foreground: 215 45% 12%;
+        --card: 0 0% 100%;
+        --card-foreground: 215 45% 12%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 215 45% 12%;
+        --primary: 200 82% 34%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 25% 94%;
+        --secondary-foreground: 215 45% 12%;
+        --muted: 210 22% 95%;
+        --muted-foreground: 215 16% 42%;
+        --accent: 36 90% 62%;
+        --accent-foreground: 215 45% 12%;
+        --destructive: 352 78% 42%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 214 22% 88%;
+        --input: 214 22% 88%;
+        --ring: 200 82% 34%;
+        --radius: 0.75rem;
+
+        /* Legacy design tokens (still used by .css files) */
+        --color-bg: hsl(var(--background));
+        --color-surface: hsl(var(--card));
+        --color-text: hsl(var(--foreground));
+        --color-muted: hsl(var(--muted-foreground));
+        --color-primary: hsl(var(--primary));
+        --color-primary-hover: hsl(200 82% 28%);
+        --color-accent: hsl(var(--accent));
+        --color-border: hsl(var(--border));
+        --color-danger: hsl(var(--destructive));
+        --color-success: hsl(164 72% 34%);
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 20px;
+        --shadow-sm: 0 1px 2px rgba(15, 28, 46, 0.06), 0 1px 3px rgba(15, 28, 46, 0.05);
+        --shadow-md: 0 6px 16px rgba(15, 28, 46, 0.08);
+        --shadow-lg: 0 14px 30px rgba(15, 28, 46, 0.1);
+        --max-content: 1180px;
+        --font-body: "Inter", "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-display: "Playfair Display", "Inter", serif;
+    }
+
+    * {
+        @apply border-border;
+        box-sizing: border-box;
+    }
+
+    html,
+    body,
+    #root {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-family: var(--font-body);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    button {
+        font: inherit;
+        cursor: pointer;
+    }
+
+    :focus-visible {
+        outline: 3px solid rgba(14, 110, 158, 0.35);
+        outline-offset: 2px;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+}
+
+/* Non-button anchor styling only (don't touch shadcn/btn buttons). */
+a:not(.btn):not([class*="inline-flex"]) {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:not(.btn):not([class*="inline-flex"]):hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+/* Legacy .btn helpers (kept so existing pages still render while we migrate). */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 150ms ease, transform 120ms ease, box-shadow 150ms ease, color 150ms ease;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-hover);
+    color: white;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn-ghost:hover {
+    background: rgba(14, 110, 158, 0.08);
+    color: var(--color-primary);
+}
+
+.btn-danger {
+    background: var(--color-danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    filter: brightness(0.95);
+    color: white;
+}
+
+.btn[disabled],
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

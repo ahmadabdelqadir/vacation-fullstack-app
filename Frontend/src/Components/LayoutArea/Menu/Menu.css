@@ -1,0 +1,78 @@
+.Menu {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.Menu-inner {
+    max-width: var(--max-content);
+    margin: 0 auto;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Bump specificity so the global anchor-color rule cannot override us. */
+a.Menu-link,
+a.Menu-link:visited {
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background-color 150ms ease, color 150ms ease, transform 120ms ease;
+}
+
+a.Menu-link:hover {
+    background: rgba(14, 110, 158, 0.08);
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a.Menu-link.active,
+a.Menu-link.active:hover,
+a.Menu-link.active:visited {
+    background: var(--color-primary);
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(14, 110, 158, 0.25);
+}
+
+.Menu-user {
+    margin-left: auto;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+.Menu-user strong {
+    color: var(--color-text);
+}
+
+.Menu-user {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.Menu-logout {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.Menu-logout:hover {
+    background: rgba(176, 0, 32, 0.08);
+    color: var(--color-danger);
+    border-color: var(--color-danger);
+}

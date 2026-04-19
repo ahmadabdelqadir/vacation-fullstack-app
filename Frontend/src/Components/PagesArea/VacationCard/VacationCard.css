@@ -1,0 +1,203 @@
+.VacationCard {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    border: 1px solid transparent;
+}
+
+.VacationCard:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border);
+}
+
+/* 21st.dev-inspired image wrapper with gradient overlay on hover. */
+.VacationCard-imageWrap {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #eef2f7;
+}
+
+.VacationCard-imageWrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 37, 64, 0.55) 0%, rgba(10, 37, 64, 0) 60%);
+    opacity: 0;
+    transition: opacity 400ms ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.VacationCard:hover .VacationCard-imageWrap::after {
+    opacity: 1;
+}
+
+.VacationCard-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms cubic-bezier(0.22, 0.9, 0.32, 1);
+}
+
+.VacationCard:hover .VacationCard-image {
+    transform: scale(1.08);
+}
+
+.VacationCard-status {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+}
+
+.VacationCard-status.is-active {
+    background: rgba(14, 143, 110, 0.95);
+    color: white;
+}
+
+.VacationCard-status.is-upcoming {
+    background: rgba(14, 110, 158, 0.95);
+    color: white;
+}
+
+.VacationCard-status.is-past {
+    background: rgba(93, 107, 128, 0.9);
+    color: white;
+}
+
+/* Heart button = your toggle action only. Icon-only, round, no number. */
+.VacationCard-like {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #c0392b;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.VacationCard-like:hover {
+    background: white;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.VacationCard-like:active {
+    transform: scale(0.94);
+}
+
+.VacationCard-likeIcon {
+    width: 20px;
+    height: 20px;
+    transition: transform 200ms ease;
+}
+
+.VacationCard-like.is-liked {
+    background: #c0392b;
+    color: white;
+}
+
+.VacationCard-like.is-liked .VacationCard-likeIcon {
+    transform: scale(1.1);
+}
+
+/* Total count = separate stat in the body. Clearly labeled, not confused with the button. */
+.VacationCard-likeStat {
+    margin-top: 0.6rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--color-border);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--color-muted);
+}
+
+.VacationCard-likeStatIcon {
+    width: 14px;
+    height: 14px;
+    color: #c0392b;
+}
+
+.VacationCard-likeStat strong {
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.VacationCard-body {
+    padding: 1rem 1.15rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.VacationCard-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.VacationCard-dates {
+    color: var(--color-muted);
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+.VacationCard-description {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.VacationCard-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.VacationCard-price {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.VacationCard-adminActions {
+    display: inline-flex;
+    gap: 0.4rem;
+}
+
+.VacationCard-adminActions .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}

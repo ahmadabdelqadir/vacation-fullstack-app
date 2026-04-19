@@ -1,0 +1,55 @@
+.VacationsPage {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.VacationsPage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.VacationsPage-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    margin: 0 0 0.25rem;
+}
+
+.VacationsPage-subtitle {
+    margin: 0;
+    color: var(--color-muted);
+}
+
+.VacationsPage-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.VacationsPage-empty {
+    background: var(--color-surface);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--color-muted);
+}
+
+.VacationsPage-empty h2 {
+    margin: 0 0 0.5rem;
+    color: var(--color-text);
+    font-family: var(--font-display);
+}
+
+.Paginator {
+    align-self: flex-start;
+}
+
+@media (max-width: 480px) {
+    .VacationsPage-header {
+        align-items: stretch;
+    }
+}

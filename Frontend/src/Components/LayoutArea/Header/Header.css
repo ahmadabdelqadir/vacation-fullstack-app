@@ -1,0 +1,53 @@
+.Header {
+    max-width: var(--max-content);
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.Header-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.Header-brand:hover {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+.Header-logo {
+    background: linear-gradient(135deg, var(--color-primary), #11a3c4);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    font-size: 1.1rem;
+    transform: rotate(-10deg);
+}
+
+.Header-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+}
+
+.Header-tagline {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+    .Header-tagline {
+        display: none;
+    }
+}

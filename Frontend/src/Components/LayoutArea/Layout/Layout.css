@@ -1,0 +1,33 @@
+.Layout {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100%;
+}
+
+.Layout > header,
+.Layout > nav,
+.Layout > main,
+.Layout > footer {
+    width: 100%;
+}
+
+.Layout > main {
+    max-width: var(--max-content);
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 3rem;
+    width: 100%;
+}
+
+.Layout-footer {
+    text-align: center;
+    padding: 1.25rem;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+    background: var(--color-surface);
+}
+
+@media (max-width: 640px) {
+    .Layout > main {
+        padding: 1rem 0.75rem 2rem;
+    }
+}

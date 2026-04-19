@@ -1,0 +1,81 @@
+.Recommendations {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.Recommendations-header h1 {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
+.Recommendations-header p {
+    margin: 0;
+    color: var(--color-muted);
+}
+
+.Recommendations-form {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.25rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.Recommendations-form label {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.Recommendations-inputRow {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.Recommendations-inputRow input {
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.7rem 0.9rem;
+    font: inherit;
+    background: var(--color-bg);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.Recommendations-inputRow input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(14, 110, 158, 0.12);
+}
+
+.Recommendations-result {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--color-primary);
+    white-space: pre-wrap;
+}
+
+.Recommendations-result h2 {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--color-primary);
+}
+
+.Recommendations-empty {
+    background: var(--color-surface);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--color-muted);
+}

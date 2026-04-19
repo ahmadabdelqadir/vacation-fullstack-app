@@ -1,0 +1,53 @@
+services:
+
+    mongo:
+        image: mongo:7
+        container_name: vacations-mongo
+        restart: unless-stopped
+        ports:
+            - "27017:27017"
+        volumes:
+            - mongo-data:/data/db
+
+    backend:
+        build:
+            context: .
+            dockerfile: Backend/Dockerfile
+        container_name: vacations-backend
+        restart: unless-stopped
+        depends_on:
+            - mongo
+        environment:
+            ENVIRONMENT: production
+            PORT: 4000
+            MONGODB_CONNECTION_STRING: mongodb://mongo:27017/vacations
+            JWT_SECRET: ${JWT_SECRET:-please-change-me-in-a-real-deployment}
+            BCRYPT_ROUNDS: ${BCRYPT_ROUNDS:-10}
+            HASH_SALT: ${HASH_SALT:-}
+            AI_API_KEY: ${AI_API_KEY:-}
+            AI_MODEL: ${AI_MODEL:-gpt-4o-mini}
+            MCP_PUBLIC_URL: ${MCP_PUBLIC_URL:-}
+            RUN_SEED: "true"
+        ports:
+            - "4000:4000"
+        volumes:
+            - backend-images:/app/dist/1-assets/images
+
+    frontend:
+        build:
+            context: .
+            dockerfile: Frontend/Dockerfile
+            args:
+                # The frontend talks to the backend through the nginx reverse proxy,
+                # so the VITE base URL is just "/" inside the container network.
+                VITE_API_BASE_URL: "/"
+        container_name: vacations-frontend
+        restart: unless-stopped
+        depends_on:
+            - backend
+        ports:
+            - "3000:80"
+
+volumes:
+    mongo-data: {}
+    backend-images: {}

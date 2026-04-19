@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.log
+.env
+.vite/
+.DS_Store
+Thumbs.db
+
+# Template folders used only as references (not published)
+FullStack Template (Mongo, Node, React)/
+MCP Server Implementation example/
+
+# Internal documentation not intended for public release
+VACATION_APP_MASTER_IMPLEMENTATION_GUIDE.md
+STAGE-*.md

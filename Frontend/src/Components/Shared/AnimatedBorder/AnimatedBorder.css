@@ -1,0 +1,36 @@
+.AnimatedBorder-wrap {
+    position: relative;
+    padding: 2px;
+    overflow: hidden;
+}
+
+.AnimatedBorder-glow {
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        hsl(var(--primary)),
+        hsl(var(--accent)),
+        hsl(200 82% 60%),
+        hsl(164 72% 40%),
+        hsl(var(--primary))
+    );
+    animation: animBorder-spin 6s linear infinite;
+    opacity: 0.7;
+}
+
+.AnimatedBorder-inner {
+    position: relative;
+    z-index: 1;
+    background: hsl(var(--card));
+}
+
+@keyframes animBorder-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .AnimatedBorder-glow { animation: none; }
+}

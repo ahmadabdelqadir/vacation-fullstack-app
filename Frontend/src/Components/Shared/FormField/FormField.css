@@ -1,0 +1,45 @@
+.FormField {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.FormField label {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--color-text);
+}
+
+.FormField input,
+.FormField textarea,
+.FormField select {
+    font: inherit;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.8rem;
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.FormField input:focus,
+.FormField textarea:focus,
+.FormField select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(14, 110, 158, 0.12);
+    outline: none;
+}
+
+.FormField.has-error input,
+.FormField.has-error textarea,
+.FormField.has-error select {
+    border-color: var(--color-danger);
+}
+
+.FormField-error {
+    color: var(--color-danger);
+}
+
+.FormField-help {
+    color: var(--color-muted);
+}

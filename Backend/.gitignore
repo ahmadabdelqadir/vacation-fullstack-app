@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+*.log
+*.tsbuildinfo
+src/1-assets/images/*
+!src/1-assets/images/.gitkeep

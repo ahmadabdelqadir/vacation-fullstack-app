@@ -1,0 +1,34 @@
+.FilterBar {
+    display: inline-flex;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.25rem;
+    box-shadow: var(--shadow-sm);
+    flex-wrap: wrap;
+}
+
+.FilterBar-option {
+    background: transparent;
+    border: none;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.FilterBar-option:hover:not(:disabled) {
+    color: var(--color-primary);
+}
+
+.FilterBar-option.is-active {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.FilterBar-option:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
